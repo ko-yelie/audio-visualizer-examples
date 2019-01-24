@@ -1,0 +1,36 @@
+{
+  "name": "shader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ko-yelie/shader-pens.git",
+  "author": "ko-yelie <ko.yelie@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lightning": "parcel ./src/index.pug --no-hmr --open",
+    "geographical": "parcel ./src/3d.pug --no-hmr --open",
+    "size": "parcel ./src/size.pug --no-hmr --open",
+    "size2": "parcel ./src/size2.pug --no-hmr --open",
+    "glitch": "parcel ./src/glitch.pug --no-hmr --open",
+    "build": "parcel build ./src/*.pug -d docs --public-url /audio-visualizer-examples/"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "glslify-bundle": "^5.0.0",
+    "glslify-deps": "^1.3.1",
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.11.0",
+    "pug": "^2.0.3",
+    "sass": "^1.16.1"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.2",
+    "glsl-easings": "^1.0.0",
+    "glsl-noise": "0.0.0",
+    "glsl-random": "0.0.5",
+    "three": "^0.100.0",
+    "three-bas": "^2.7.1",
+    "three-trackballcontrols": "^0.0.7"
+  }
+}
