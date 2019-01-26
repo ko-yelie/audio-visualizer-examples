@@ -103,22 +103,19 @@ export default class Wave3d {
 
       // material.uniforms['resolution'].value = store.resolution
     })
+  }
 
-    this.startAudio = () => {
-      this.initMedia().then(() => {
-        this.initParticle()
+  start () {
+    this.initMedia().then(() => {
+      this.initParticle()
 
-        root.addUpdateCallback(timestamp => {
-          this.update(timestamp)
-        })
+      this.root.addUpdateCallback(timestamp => {
+        this.update(timestamp)
       })
-    }
-    window.addEventListener('click', this.startAudio)
+    })
   }
 
   initMedia () {
-    window.removeEventListener('click', this.startAudio)
-
     const media = this.media = new Media({
       bufferLength: POINT_RESOLUTION
     })

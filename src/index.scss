@@ -4,6 +4,9 @@ body {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   margin: 0;
   background-color: #000;
@@ -14,4 +17,43 @@ canvas {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+button {
+  position: relative;
+  padding: 0 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(#000000, 0.5);
+  color: #fff;
+  cursor: pointer;
+
+  span {
+    display: block;
+    font-size: 80px;
+  }
+
+  &:hover {
+    color: rgba(#fff, 0.7);
+  }
+}
+
+.copy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1em;
+  font-size: 10px;
+
+  p {
+    margin: 0;
+  }
+}
+
+a {
+  color: rgba(#fff, 0.7);
+
+  &:hover {
+    text-decoration: none;
+  }
 }

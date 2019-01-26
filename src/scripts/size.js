@@ -92,17 +92,14 @@ export default class Size {
     root.addResizeCallback(() => {
       this.setSize()
     })
+  }
 
-    this.startAudio = () => {
-      window.removeEventListener('click', this.startAudio)
-
-      this.initMedia().then(() => {
-        root.addUpdateCallback(timestamp => {
-          this.update(timestamp)
-        })
+  start () {
+    this.initMedia().then(() => {
+      this.root.addUpdateCallback(timestamp => {
+        this.update(timestamp)
       })
-    }
-    window.addEventListener('click', this.startAudio)
+    })
   }
 
   initMedia () {

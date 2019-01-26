@@ -3,4 +3,11 @@ import Glitch from './scripts/glitch'
 
 init()
 
-new Glitch()
+const visualizer = new Glitch()
+
+const playButton = document.getElementById('play')
+playButton.addEventListener('click', () => {
+  playButton.parentNode.removeChild(playButton)
+
+  visualizer.start()
+})

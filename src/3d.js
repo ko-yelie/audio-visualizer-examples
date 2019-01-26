@@ -57,4 +57,11 @@ window.addEventListener('pointermove', ({ clientY }) => {
   pointerRateY = (-(clientY - store.clientHalfHeight) / store.clientHalfHeight) * store.clientHeight * 0.06
 })
 
-const wave3d = new Wave3d()
+const visualizer = new Wave3d()
+
+const playButton = document.getElementById('play')
+playButton.addEventListener('click', () => {
+  playButton.parentNode.removeChild(playButton)
+
+  visualizer.start()
+})

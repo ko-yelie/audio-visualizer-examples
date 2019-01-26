@@ -203,20 +203,17 @@ export default class ShootingStar {
       // console.log(scale)
       // mesh.scale.set(scale, scale, 1)
     })
+  }
 
-    this.startAudio = () => {
-      this.initMedia()
-
-      root.addUpdateCallback(timestamp => {
+  start () {
+    this.initMedia().then(() => {
+      this.root.addUpdateCallback(timestamp => {
         this.update(timestamp)
       })
-    }
-    window.addEventListener('click', this.startAudio)
+    })
   }
 
   initMedia () {
-    window.removeEventListener('click', this.startAudio)
-
     const media = this.media = new Media({
       bufferLength: POINT_RESOLUTION
     })
@@ -264,9 +261,15 @@ export default class ShootingStar {
     // media.setAudio(require('../audio/apple.mp3'))
     // media.setAudio(require('../audio/グルーヴァー.mp3'))
     initVisualizer()
+    return Promise.resolve()
 
-    // media.enumerateDevices().then(() => {
-    //   media.getUserMedia().then(() => { initVisualizer() })
+    // return new Promise(resolve => {
+    //   media.enumerateDevices().then(() => {
+    //     media.getUserMedia().then(() => {
+    //       initVisualizer()
+    //       resolve()
+    //     })
+    //   })
     // })
   }
 

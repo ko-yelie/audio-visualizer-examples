@@ -1,10 +1,13 @@
 import init from './scripts/init'
-// import Text from './scripts/text'
 import ShootingStar from './scripts/shooting-star'
 
 init()
 
-// const text = new Text()
-const shootingStar = new ShootingStar()
+const visualizer = new ShootingStar()
 
-// text.change()
+const playButton = document.getElementById('play')
+playButton.addEventListener('click', () => {
+  playButton.parentNode.removeChild(playButton)
+
+  visualizer.start()
+})
